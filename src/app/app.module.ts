@@ -24,6 +24,7 @@ import { OnlineOrderComponent } from './components/pages/online-order/online-ord
 import { ChefsComponent } from './components/pages/chefs/chefs.component';
 import { BookTableComponent } from './components/pages/book-table/book-table.component';
 import { CartComponent } from './components/pages/cart/cart.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 import { ComingSoonComponent } from './components/pages/coming-soon/coming-soon.component';
 import { FaqComponent } from './components/pages/faq/faq.component';
@@ -32,6 +33,7 @@ import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privac
 import { ErrorComponent } from './components/pages/error/error.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { NavbarStyleThreeComponent } from './components/common/navbar-style-three/navbar-style-three.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,11 @@ import { NavbarStyleThreeComponent } from './components/common/navbar-style-thre
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

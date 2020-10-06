@@ -57,40 +57,40 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="contact-item">
-                    <form id="contactForm">
+                    <form id="contactForm"  ngSubmit="onSubmit()" #contactForm="ngForm" >
                         <div class="row">
                             <div class="col-sm-6 col-lg-12">
                                 <div class="form-group">
-                                    <input type="text" name="name" id="name" class="form-control" required placeholder="Name">
+                                    <input type="text"  id="name" class="form-control" required placeholder="Name" [(ngModel)]="enquiryModel.name" name="name" #name="ngModel">
                                 </div>
                             </div>
 
                             <div class="col-sm-6 col-lg-12">
                                 <div class="form-group">
-                                    <input type="email" name="email" id="email" class="form-control" required placeholder="Email">
+                                    <input type="email" id="email" class="form-control" required placeholder="Email"  [(ngModel)]="enquiryModel.email" name="email" #email="ngModel">
                                 </div>
                             </div>
 
                             <div class="col-sm-6 col-lg-12">
                                 <div class="form-group">
-                                    <input type="text" name="phone_number" id="phone_number" required class="form-control" placeholder="Phone">
+                                    <input type="text"  id="phone_number" required class="form-control" placeholder="Phone" [(ngModel)]="enquiryModel.phone" name="phone" #phone="ngModel">
                                 </div>
                             </div>
     
                             <div class="col-sm-6 col-lg-12">
                                 <div class="form-group">
-                                    <input type="text" name="msg_subject" id="msg_subject" class="form-control" required placeholder="Subject">
+                                    <input type="text" id="msg_subject" class="form-control" required placeholder="Subject" [(ngModel)]="enquiryModel.subject" name="subject" #subject="ngModel">
                                 </div>
                             </div>
 
                             <div class="col-md-12 col-lg-12">
                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="6" required placeholder="Message"></textarea>
+                                    <textarea class="form-control" id="message" cols="30" rows="6" required placeholder="Message" [(ngModel)]="enquiryModel.message" name="message" #message="ngModel"></textarea>
                                 </div>
                             </div>
 
                             <div class="col-md-12 col-lg-12">
-                                <button type="submit" class="cmn-btn btn">Send Message</button>
+                                <button type="submit" class="cmn-btn btn" (click) ="subscribeEnquiry()">Send Message</button>
                             </div>
                         </div>
                     </form>

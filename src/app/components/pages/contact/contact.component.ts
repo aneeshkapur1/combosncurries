@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EnquiryMessageDTO } from '../enquiryMessageDTO';
+import { SubscribeService } from './../../../subscribe.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  enquiryModel = new EnquiryMessageDTO("","","","","");
+
+  constructor(private subscribeService : SubscribeService) { }
 
   ngOnInit(): void {
+  }
+
+  
+  subscribeEnquiry() : void {
+    this.subscribeService.subscribeEnquiry(this.enquiryModel).subscribe((result) =>{
+      console.log(result);
+    });
   }
 
 }
