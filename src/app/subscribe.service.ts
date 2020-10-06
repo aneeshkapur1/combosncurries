@@ -11,7 +11,7 @@ export class SubscribeService {
 
 
   constructor(private httpClient : HttpClient) { 
-    this.javaEndPoint="https://13.233.29.72/v1/";
+    this.javaEndPoint="https://13.233.29.72:8080/v1/";
   }
 
 
